@@ -1,4 +1,4 @@
-MarkupCalculator = 1
+require 'nupack2'
 
 RSpec.describe MarkupCalculator do
 end
