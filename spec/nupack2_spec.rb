@@ -18,7 +18,7 @@ RSpec.describe MarkupCalculator do
 
       output = subject.worker_markup(price, workers)
 
-      expect(output).to eq(101.2)
+      expect(output).to eq(1.2)
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe MarkupCalculator do
 
       output = subject.category_markup(price, category)
 
-      expect(output).to eq(107.5)
+      expect(output).to eq(7.5)
     end
 
     it "adds 13% to food products" do
@@ -38,7 +38,7 @@ RSpec.describe MarkupCalculator do
 
       output = subject.category_markup(price, category)
 
-      expect(output).to eq(113)
+      expect(output).to eq(13)
     end
 
     it "adds 2% to electronics" do
@@ -47,19 +47,29 @@ RSpec.describe MarkupCalculator do
 
       output = subject.category_markup(price, category)
 
-      expect(output).to eq(102)
+      expect(output).to eq(2)
     end
   end
 
   describe ".markup" do
     it "calculates the final price after markup" do
-      price = 100
-      workers = 2
+      price = 1299.99
+      workers = 3
       category = "food"
 
       output = subject.markup(price, workers, category)
 
-      expect(output).to eq(117.75)
+      expect(output).to eq(1591.58)
+    end
+  end
+
+  describe ".round" do
+    it "rounds a number to two decimal places" do
+      number = 100.008
+
+      output = subject.round(number)
+
+      expect(output).to eq(100.01)
     end
   end
 end
