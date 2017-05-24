@@ -9,4 +9,13 @@ module MarkupCalculator
     new_price = (price * 1.012) * workers
     (new_price * 100).round(2) / 100
   end
+
+  def category_markup(price, category)
+    case category
+      when "pharmaceutical"
+        price * 1.075
+      else
+        price
+    end
+  end
 end
