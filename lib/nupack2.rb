@@ -2,6 +2,6 @@ module MarkupCalculator
   extend self
 
   def flat_markup(base_price)
-    105
+    base_price * 1.05
   end
 end
