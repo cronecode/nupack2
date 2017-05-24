@@ -21,4 +21,33 @@ RSpec.describe MarkupCalculator do
       expect(output).to eq(101.2)
     end
   end
+
+  describe ".category_markup" do
+    it "adds 7.5% to pharmaceutical products" do
+      price = 100
+      category = "pharmaceutical"
+
+      output = subject.category_markup(price, category)
+
+      expect(output).to eq(107.5)
+    end
+
+    it "adds 13% to food products" do
+      price = 100
+      category = "food"
+
+      output = subject.category_markup(price, category)
+
+      expect(output).to eq(113)
+    end
+
+    it "adds 2% to electronics" do
+      price = 100
+      category = "electronics"
+
+      output = subject.category_markup(price, category)
+
+      expect(output).to eq(102)
+    end
+  end
 end
