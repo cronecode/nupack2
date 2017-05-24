@@ -14,6 +14,8 @@ module MarkupCalculator
     case category
       when "pharmaceutical"
         price * 1.075
+      when "food"
+        (price * 1.13 * 100).round(2) / 100
       else
         price
     end
