@@ -16,6 +16,8 @@ module MarkupCalculator
         price * 1.075
       when "food"
         (price * 1.13 * 100).round(2) / 100
+      when "electronics"
+        price * 1.02
       else
         price
     end
