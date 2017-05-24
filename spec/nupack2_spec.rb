@@ -10,4 +10,15 @@ RSpec.describe MarkupCalculator do
       expect(output).to eq(105)
     end
   end
+
+  describe ".worker_markup" do
+    it "adds 1.2% for every worker on the job" do
+      price = 100
+      workers = 1
+
+      output = subject.worker_markup(price, workers)
+
+      expect(output).to eq(101.2)
+    end
+  end
 end
