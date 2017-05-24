@@ -50,4 +50,16 @@ RSpec.describe MarkupCalculator do
       expect(output).to eq(102)
     end
   end
+
+  describe ".markup" do
+    it "calculates the final price after markup" do
+      price = 100
+      workers = 2
+      category = "food"
+
+      output = subject.markup(price, workers, category)
+
+      expect(output).to eq(117.75)
+    end
+  end
 end
