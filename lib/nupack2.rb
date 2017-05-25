@@ -33,7 +33,6 @@ module MarkupCalculator
   end
 
   def round(price)
-    (price * 100).round(2) / 100
-    #(price / 100).round(2) * 100
+    (price * 100).round / 100.0
   end
 end
